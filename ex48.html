@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício</title>
+</head>
+<body>
+    <h1>Exercício 48</h1>
+    <p>Crie uma aplicação que receba a altura do degrau de uma escada (cm) e a altura que o
+      usuário deseja alcançar subindo a escada (cm). Calcule e mostre quantos degraus o
+      usuário deverá subir para atingir seu objetivo, sem se preocupar com a altura do usuário.
+      (Exiba os dados no browser e no console).      
+        </p>
+
+        <h1>Calculadora de Degraus</h1>
+
+        <label for="alturaDegrau">Digite a altura do degrau da escada (cm):</label>
+        <input type="number" id="alturaDegrau"><br>
+      
+        <label for="alturaDesejada">Digite a altura desejada a alcançar (cm):</label>
+        <input type="number" id="alturaDesejada"><br>
+      
+        <button onclick="calcularDegraus()">Calcular</button>
+      
+        <div id="resultadoDegraus"></div>
+      
+        <script>
+function calcularDegraus() {
+  let alturaDegrau = parseFloat(document.getElementById("alturaDegrau").value);
+  let alturaDesejada = parseFloat(document.getElementById("alturaDesejada").value);
+
+  let numeroDegraus = Math.ceil(alturaDesejada / alturaDegrau);
+
+  document.getElementById("resultadoDegraus").innerHTML = `Você precisará subir ${numeroDegraus} degraus para alcançar a altura desejada.`;
+
+  console.log(`Você precisará subir ${numeroDegraus} degraus para alcançar a altura desejada.`);
+}
+
+        </script>
+</body>
+</html>

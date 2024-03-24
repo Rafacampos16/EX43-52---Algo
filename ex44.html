@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício</title>
+</head>
+<body>
+    <h1>Exercício 44</h1>
+    <p>Você deve calcular a idade de uma pessoa em dias. Insira sua idade em anos e, em
+        seguida, calcule e exiba a idade em dias. Lembrando que um ano tem 365 dias. (Exiba os
+        dados no browser e no console).
+        </p>
+
+        <h1>Calculadora de Idade em Dias</h1>
+
+        <label for="idadeAnos">Digite sua idade em anos:</label>
+        <input type="number" id="idadeAnos"><br>
+      
+        <button onclick="calcularIdadeEmDias()">Calcular</button>
+      
+        <div id="resultadoIdadeDias"></div>
+
+        <script>
+            function calcularIdadeEmDias() {
+
+        let idadeAnos = parseInt(document.getElementById("idadeAnos").value);
+
+        let idadeDias = idadeAnos * 365;
+
+        document.getElementById("resultadoIdadeDias").innerHTML = `Sua idade em dias é: ${idadeDias}`;
+
+        console.log(`Sua idade em dias é: ${idadeDias}`);
+        }
+
+        </script>
+</body>
+</html>

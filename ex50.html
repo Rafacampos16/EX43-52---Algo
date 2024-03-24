@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+  </head>
+  <body>
+    <h1>Exercício 50</h1>
+    <p>Crie um programa para calcular o preço total de compras em uma loja. O
+      programa deve
+      receber o preço de três produtos diferentes. O programa deve somar os
+      preços e exibir
+      o total a ser pago sem desconto, com desconto de 10%, desconto de 20%,
+      desconto de
+      30% e desconto de 50%. (Exiba os dados no browser e no console).
+    </p>
+
+    <h1>Calculadora de Preço Total</h1>
+
+    <label for="produto1">Digite o preço do primeiro produto:</label>
+    <input type="number" id="produto1"><br>
+
+    <label for="produto2">Digite o preço do segundo produto:</label>
+    <input type="number" id="produto2"><br>
+
+    <label for="produto3">Digite o preço do terceiro produto:</label>
+    <input type="number" id="produto3"><br>
+
+    <button onclick="calcularTotal()">Calcular Total</button>
+
+    <!-- Resultados dos totais com diferentes descontos -->
+    <div id="resultadoTotalSemDesconto"></div>
+    <div id="resultadoTotalDesconto10"></div>
+    <div id="resultadoTotalDesconto20"></div>
+    <div id="resultadoTotalDesconto30"></div>
+    <div id="resultadoTotalDesconto50"></div>
+
+    <script>
+        function calcularTotal() {
+  // Obtém os preços dos produtos digitados pelo usuário
+  let precoProduto1 = parseFloat(document.getElementById("produto1").value);
+  let precoProduto2 = parseFloat(document.getElementById("produto2").value);
+  let precoProduto3 = parseFloat(document.getElementById("produto3").value);
+
+  // Calcula o preço total sem desconto
+  let totalSemDesconto = precoProduto1 + precoProduto2 + precoProduto3;
+
+  // Calcula os totais com diferentes descontos
+  let totalDesconto10 = totalSemDesconto * 0.9; // Desconto de 10%
+  let totalDesconto20 = totalSemDesconto * 0.8; // Desconto de 20%
+  let totalDesconto30 = totalSemDesconto * 0.7; // Desconto de 30%
+  let totalDesconto50 = totalSemDesconto * 0.5; // Desconto de 50%
+
+  // Exibe os resultados no HTML
+  document.getElementById("resultadoTotalSemDesconto").innerHTML = `Total sem desconto: R$ ${totalSemDesconto.toFixed(2)}`;
+  document.getElementById("resultadoTotalDesconto10").innerHTML = `Total com desconto de 10%: R$ ${totalDesconto10.toFixed(2)}`;
+  document.getElementById("resultadoTotalDesconto20").innerHTML = `Total com desconto de 20%: R$ ${totalDesconto20.toFixed(2)}`;
+  document.getElementById("resultadoTotalDesconto30").innerHTML = `Total com desconto de 30%: R$ ${totalDesconto30.toFixed(2)}`;
+  document.getElementById("resultadoTotalDesconto50").innerHTML = `Total com desconto de 50%: R$ ${totalDesconto50.toFixed(2)}`;
+
+  // Exibe os resultados no console
+  console.log(`Total sem desconto: R$ ${totalSemDesconto.toFixed(2)}`);
+  console.log(`Total com desconto de 10%: R$ ${totalDesconto10.toFixed(2)}`);
+  console.log(`Total com desconto de 20%: R$ ${totalDesconto20.toFixed(2)}`);
+  console.log(`Total com desconto de 30%: R$ ${totalDesconto30.toFixed(2)}`);
+  console.log(`Total com desconto de 50%: R$ ${totalDesconto50.toFixed(2)}`);
+}
+
+      </script>
+
+  </body>
+</html>

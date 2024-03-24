@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+  </head>
+  <body>
+    <h1>Exercício 52</h1>
+    <p>
+      Faça um programa que calcule a gorjeta a ser deixada em um restaurante. O
+      programa
+      deve receber o valor da conta e a porcentagem de gorjeta desejada. O
+      programa deve
+      calcular e exibir no browser o valor da gorjeta e o total a ser pago.
+    </p>
+
+    <h1>Calculadora de Gorjeta</h1>
+
+    <label for="valorConta">Digite o valor da conta (R$):</label>
+    <input type="number" id="valorConta"><br>
+
+    <label for="porcentagemGorjeta">Digite a porcentagem de gorjeta desejada
+      (%):</label>
+    <input type="number" id="porcentagemGorjeta"><br>
+
+    <button onclick="calcularGorjeta()">Calcular</button>
+
+    <div id="resultadoGorjeta"></div>
+    <div id="resultadoTotal"></div>
+
+    <script>
+    function calcularGorjeta() {
+  let valorConta = parseFloat(document.getElementById("valorConta").value);
+  let porcentagemGorjeta = parseFloat(document.getElementById("porcentagemGorjeta").value);
+
+  let gorjeta = valorConta * (porcentagemGorjeta / 100);
+  let total = valorConta + gorjeta;
+
+  document.getElementById("resultadoGorjeta").innerHTML = `Valor da gorjeta: R$ ${gorjeta.toFixed(2)}`;
+  document.getElementById("resultadoTotal").innerHTML = `Total a ser pago: R$ ${total.toFixed(2)}`;
+}
+
+  </script>
+  </body>
+</html>

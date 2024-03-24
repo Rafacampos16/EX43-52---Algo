@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício</title>
+</head>
+<body>
+    <h1>Exercício 49</h1>
+    <p>Crie um programa que calcule o Índice de Massa Corporal (IMC) de uma pessoa. O
+      programa deve receber o peso em quilogramas e a altura em metros. O programa deve
+      exibir o IMC calculado. (Exiba os dados no browser e no console, os valores devem ser
+      obrigatoriamente maiores que zero).
+      <br>A fórmula para calcular o IMC é:
+      <br>IMC = peso (em quilogramas) / (altura (em metros) * altura (em metros))
+        </p>
+
+        <h1>Calculadora de IMC</h1>
+
+        <label for="peso">Digite seu peso (kg):</label>
+        <input type="number" id="peso"><br>
+      
+        <label for="altura">Digite sua altura (m):</label>
+        <input type="number" id="altura"><br>
+      
+        <button onclick="calcularIMC()">Calcular</button>
+      
+        <div id="resultadoIMC"></div>
+      
+        <script>
+          function calcularIMC() {
+  let peso = parseFloat(document.getElementById("peso").value);
+  let altura = parseFloat(document.getElementById("altura").value);
+
+  if (peso <= 0 || altura <= 0) {
+    alert("Os valores do peso e altura devem ser maiores que zero.");
+    return;
+  }
+
+  let imc = peso / (altura * altura);
+
+  document.getElementById("resultadoIMC").innerHTML = `Seu IMC é: ${imc.toFixed(2)}`;
+
+  console.log(`Seu IMC é: ${imc.toFixed(2)}`);
+}
+        </script>
+</body>
+</html>
